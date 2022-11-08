@@ -40,9 +40,10 @@ exports.login = async (req, res, next) => {
         if (!isMatch) {
             return next(new ErrorResponse("Invalid credentials", 401));
         }
-
         sendToken(user, 200, res);
+        console.log("User Logged In")
     } catch (error) {
+        console.log("error logging in")
         next(error)
     }
 };

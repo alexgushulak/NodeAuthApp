@@ -12,10 +12,10 @@ exports.protect = async (req, res, next) => {
 
     // If the token is not in the header, return an error
     if (!token) {
-        return next(new ErrorResponse('Not authorized to access this route', 401));
+        return next(new ErrorResponse('Not authorized to access this route because your token is not in the header', 401));
     }
 
-    // If the token is in the error, try to verify it, and if it fails, return an error
+    // If the token is in the header, try to verify it, and if it fails, return an error
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
@@ -28,6 +28,6 @@ exports.protect = async (req, res, next) => {
         req.user = user;
         next();
     } catch (error) {
-        return next(new ErrorResponse('Not authorized to access this route', 401));
+        return next(new ErrorResponse('Not authorized to access this route because your token could not be verified', 401));
     }
 }
