@@ -1,7 +1,10 @@
 // React Component for Login Form
 
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Form, Label, Input} from 'reactstrap';
 import axios from 'axios';
+import '../App.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -20,28 +23,23 @@ const Login = () => {
             .catch(err => {
                 console.log(err);
             });
-
-
     }
 
     return (
-        <div className="login">
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Username</label>
-            <input type="text" name="email" id="email" value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="password">Password</label>
-            <input
-            type="password"
-            name="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">Login</button>
-        </form>
+        <div className="loginContainer">
+        <Form className="loginForm" onSubmit={handleSubmit}>
+            <div className="floatLeft">
+                <Input className="loginInput" placeholder="Email" type="email" name="email" id="email" autoComplete="off" value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                />
+            </div>
+            <div className="floatLeft">
+                <Input className="loginInput" placeholder="Password" type="password" name="password" id="password" value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                />
+            </div>
+            <Button className="loginButton" color="primary" type="submit">Log In</Button>
+        </Form>
         </div>
     );
     };

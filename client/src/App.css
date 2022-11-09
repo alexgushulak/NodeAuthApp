@@ -13,6 +13,41 @@
   }
 }
 
+.loginLabel {
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.loginContainer {
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+  height: 250px;
+}
+
+.loginInput {
+  font-size: 20px;
+  margin: 10px auto; 
+  width: 300px;
+}
+
+.loginContainer {
+  background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  margin: 40px auto;
+  padding-top: 25px;
+}
+
+.loginButton {
+  width: 300px;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 20px 0px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
