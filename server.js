@@ -15,6 +15,7 @@ app.use(express.json());
 app.use('/api/v1/auth', require('./routes/auth'));
 app.use('/api/v1/private', require('./routes/private'));
 app.use('/api/v1/delete', require('./routes/delete'));
+app.use('/api/v1/posts', require('./routes/posts'));
 app.use(errorHandler);
 
 
