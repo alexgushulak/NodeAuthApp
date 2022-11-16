@@ -22,16 +22,12 @@ exports.createPost = async (req, res, next) => {
 
 exports.getPosts = (req, res, next) => {
     console.log("someone is trying to access posts");
-    // return the names of all users in the database
-    Posts.find({}, (err, posts) => {
-        data = posts.map(post => post.title);
+    // return every post in the database
+    Post.find({}, (err, posts) => {
         if (err) {
-            return next(new ErrorResponse('Could not find any posts', 404));
+            console.log(err);
         } else {
-            res.status(200).json({
-                success: true,
-                data: data
-            });
+            res.json(posts);
         }
     });
 }
@@ -39,7 +35,7 @@ exports.getPosts = (req, res, next) => {
 exports.deleteFirstPost = (req, res, next) => {
     console.log("someone is trying to delete a post");
     // delete the first user in the database
-    Posts.findOneAndDelete({}, (err, post) => {
+    Post.findOneAndDelete({}, (err, post) => {
         if (err) {
             return next(new ErrorResponse('Could not find any posts', 404));
         } else {

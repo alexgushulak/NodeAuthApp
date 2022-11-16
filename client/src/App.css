@@ -33,19 +33,31 @@
   width: 300px;
 }
 
-.loginContainer {
+.loginForm {
+  padding: 10px;
+}
+
+.registerForm {
+  padding: 10px;
+}
+
+.formContainer {
   background-color: #f8f8f8;
   border: 1px solid #e7e7e7;
   border-radius: 5px;
   margin: 40px auto;
   padding-top: 25px;
+  padding-bottom: 50px;
+  width: 500px;
 }
 
-.loginButton {
+.submitButton {
   width: 300px;
   font-size: 20px;
   font-weight: 800;
   margin: 20px 0px;
+  display: block;
+  margin: 0 auto;
 }
 
 .App-header {

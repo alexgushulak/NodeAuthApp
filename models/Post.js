@@ -11,6 +11,7 @@ const PostSchema = new mongoose.Schema({
     },
     body: {
         type: String,
+        unique: false,
         required: [true, 'Please provide a body'],
         maxlength: [500, 'Body cannot be more than 500 characters']
     },

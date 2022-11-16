@@ -1,14 +1,20 @@
-// React Component for Login Form
-
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, Label, Input} from 'reactstrap';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import { Button, Form, Input} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    // useEffect(() => {
+    //     if (localStorage.getItem('token')) {
+    //         navigate("/user")
+    //    }
+    // }, [navigate]);
 
     // post to private api using axios content-type: application/json
     const handleSubmit = (e) => {
@@ -26,7 +32,7 @@ const Login = () => {
     }
 
     return (
-        <div className="loginContainer">
+        <div className="formContainer">
         <Form className="loginForm" onSubmit={handleSubmit}>
             <div className="floatLeft">
                 <Input className="loginInput" placeholder="Email" type="email" name="email" id="email" autoComplete="off" value={email}
@@ -38,10 +44,10 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
-            <Button className="loginButton" color="primary" type="submit">Log In</Button>
+            <Button className="submitButton" color="primary" type="submit">Log In</Button>
         </Form>
         </div>
     );
-    };
+};
 
 export default Login;
