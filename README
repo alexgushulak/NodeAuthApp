@@ -1,5 +1,5 @@
 Running Local MongoDB Server
 1. Setup and Run Local MongoDB Server: https://zellwk.com/blog/local-mongodb/ (mac)
-2. Start MongoDB Server with "brew services run mongodb-comunnity"
+2. Start MongoDB Server with "brew services run mongodb-community"
 3. Check if MongoDB Server is running with "brew services list"
 4. Stop MongoDB Server with "brew services stop mongodb-community"
